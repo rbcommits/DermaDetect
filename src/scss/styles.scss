@@ -1,0 +1,62 @@
+.hello-form {
+  p {
+    color: blue;
+  }
+}
+
+
+.tableStyle{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.react-bs-table .table-bordered > thead > tr > th {
+  border: 0;
+  white-space: normal;
+  /* word-wrap: break-word; */
+}
+
+.table-bordered > tbody > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th {
+  border: 1px solid #ddd;
+  white-space: normal;
+  /* word-wrap: break-word; */
+}
+
+.menuDrop{
+  float:right;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  display: block;
+}
+
+.tabe{
+  float:right;
+
+}
+
+body {
+  background-color:lightsteelblue;
+}
+
+.react-bs-table .react-bs-table-bordered{
+  background-color: lightcyan;
+}
+
+.table_row_background_answered td{
+  //color: magenta;
+  //background-color: aquamarine;
+}
+
+.table_row_background_not_answered td{
+  color: black;
+  background-color: rgb(249, 204, 204);
+}
+
+
+
+
