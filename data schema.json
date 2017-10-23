@@ -1,0 +1,40 @@
+{
+    "user": 
+    {
+        "name": "",
+        "username": "",
+        "password": "",
+        "phone_number": { /*multiple numbers may be stored */ },
+        "isDoctor": "", // flag to determine if user is a doctor or patient
+        "address": {
+            "line1": "",
+            "line2": "",
+            "state": "",
+            "zip": "",
+            "country": ""
+        },
+        "medical_history": {    //an array of all the dematological conditions that happened to the uesr
+            "previous_conditions": {
+                "condition": [{
+                    "condition_name": "",
+                    "condition_occurance_date": "" 
+                }]//end condition
+            }//end previous question
+        }//end medical history
+
+    },
+
+
+    "question": {
+        "question": "",
+        "posted_by": "",
+        "posted_on": "",
+        "image_url": "",
+        "answer": [{    //arrary to hold all the responses
+            "response": "",
+            "responded_by": "",
+            "responded_on": ""
+        }]
+    } 
+}
+
