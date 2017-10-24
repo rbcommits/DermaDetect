@@ -1,5 +1,5 @@
 {
-  "name": "Quest-Trek",
+  "name": "derma_detect",
   "version": "0.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -15,12 +15,13 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
+    "react-transition-group": "^1.2.1",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "^2.2.0",
-    "webpack": "^2.6.0",
-    "superagent": "^3.4.1"
+    "superagent": "^3.4.1",
+    "webpack": "^2.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -39,7 +40,7 @@
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot --history-api-fallback",
     "start": "./node_modules/.bin/webpack-dev-server --content-base src --host 0.0.0.0 --port 8080 --inline --history-api-fallback",
-    "test": "jest"
+    "test": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot --history-api-fallback"
   },
   "author": "MCOE",
   "license": "ISC"

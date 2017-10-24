@@ -3,41 +3,39 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
-export class header extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
+export class Header extends Component {
+
 
   render() {
     return (
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-default navigation-clean-search">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <a class="navbar-brand navbar-link" href="#">Derma Detect</a>
-                            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
+        <div className="row">
+            <div className="col-md-12">
+                <nav className="navbar navbar-default navigation-clean-search">
+                    <div className="container">
+                        <div className="navbar-header">
+                            <a className="navbar-brand navbar-link" href="#">Derma Detect</a>
+                            <button className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                                <span className="sr-only">Toggle navigation</span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
                             </button>
                         </div>
-                        <div class="collapse navbar-collapse" id="navcol-1">
-                            <ul class="nav navbar-nav">
-                                <li class="active" role="presentation"><a href="#">Link 1</a></li>
+                        <div className="collapse navbar-collapse" id="navcol-1">
+                            <ul className="nav navbar-nav">
+                                <li className="active" role="presentation"><a href="#">Link 1</a></li>
                                 <li role="presentation"><a href="#">Link 2</a></li>
                                 <li role="presentation"><a href="#">Link 3</a></li>
                             </ul>
-                            <form class="navbar-form navbar-left" target="_self">
-                                <div class="form-group">
-                                    <label class="control-label" for="search-field">
-                                        <i class="glyphicon glyphicon-search" />
+                            <form className="navbar-form navbar-left" target="_self">
+                                <div className="form-group">
+                                    <label className="control-label" >
+                                        <i className="glyphicon glyphicon-search" />
                                     </label>
-                                    <input class="form-control search-field" type="search" name="search" id="search-field" />
+                                    <input className="form-control search-field" type="search" name="search" id="search-field" />
                                 </div>
                             </form>
-                            <a class="btn btn-default navbar-btn navbar-right action-button" role="button" href="#">Action </a></div>
+                            <a className="btn btn-default navbar-btn navbar-right action-button" role="button" href="#">Action </a></div>
                     </div>
                 </nav>
             </div>
@@ -54,4 +52,4 @@ const mapDispatchToProps = {
   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

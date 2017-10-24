@@ -5,10 +5,9 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom"
 import store from './redux/Store';
-// import Injector from './redux/Injector';
 import Index from './components/Index';
+import styles from '../css/styles.min.css'
 
-import styles from '../scss/styles.scss';
 
 
 ReactDOM.render((
@@ -17,10 +16,15 @@ ReactDOM.render((
       <Router history={createBrowserHistory()}>
         <Switch>
           <Route exact path='/' component={Index}/>
-          <Route render={(props) => (<div>404 not found</div>)}/>
+          
         </Switch>
       </Router>
     </BrowserRouter>
   </Provider>
 ), document.getElementById('app'));
 
+/*
+<Route render={(props) => (<div>404 not found</div>)}/>
+
+
+  */
