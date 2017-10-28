@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { get, post } from '../rest/rest.js'
 import Question from './Question.js'
+import PostQuestion from './PostQuestion.js'
 
 export class BrowseForum extends Component {
 
@@ -44,6 +45,7 @@ export class BrowseForum extends Component {
     
     return (
       <div className="col-md-8">
+        <PostQuestion />
         {questions}
       </div>
     )

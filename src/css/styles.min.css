@@ -687,9 +687,20 @@
 }
 
 .side-bar {
-    background-color: #556;
-    height: 100%
+    background-color:	#393939 ;
+    height: 100%;
 }
+.side-bar::after {
+    content: "";
+    background: url("sidebar.jpg");
+    opacity: .15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
 
 .nav {
     padding-left: 0
@@ -709,7 +720,7 @@
 
 body {
     overflow-x: hidden;
-    background-color: #333
+    background-color: #efefef
 }
 
 @media (min-width:1000px) {
