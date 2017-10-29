@@ -773,26 +773,19 @@ body {
     border-style: solid;
 }
 
-.example-enter {
-    opacity: 0.01;
-    background-color: rgba(0, 0, 0, 0)
+.question-enter {
+    transform: translate(100%);
   }
-  
-  .example-enter.example-enter-active {
-    opacity: 1;
-    transition: opacity 500ms linear;
-    background-color: rgba(255, 255, 255, 1)
+  .question-enter.question-enter-active {
+    transform: translate(0%);
+    transition: transform 300ms ease-in;
   }
-  
-  .example-leave {
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 1)
+  .question-leave {
+    transform: translate(0%);
   }
-  
-  .example-leave.example-leave-active {
-    opacity: 0.01;
-    transition: opacity 300ms linear;
-    background-color: rgba(255, 255, 255, 0)
+  .question-leave.question-leave-active {
+    transform: translate(0, 20%);
+    transition: transform 300ms ease-out;
   }
 
   .input-lg {
@@ -837,7 +830,7 @@ text-decoration: none;
 }
 
 .sidebar-bg {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(255, 255, 255, .1);
     color: #05911F;
     text-decoration: none;
 }
@@ -851,17 +844,18 @@ text-decoration: none;
 .side-bar {
     background-color:	#3e3e3e ;
     height: 100%;
+    z-index: 0;
 }
 .side-bar::after {
-    content: "";
+    content: "" ;
     background: url("sidebar.jpg");
-    opacity: .15;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: 999999;   
+    opacity: 0.25;
+    top: 0 ;
+    left: 0 ;
+    bottom: 0 ;
+    right: 0 ;
+    position: absolute ;
+    z-index: -1;   
   }
 .forum-user-image {
 width: 150px;
@@ -896,3 +890,4 @@ height: 150px;
 .table-responsive > .table >tbody > tr >td {
     white-space: normal;
 }
+

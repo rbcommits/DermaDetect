@@ -5,7 +5,8 @@ import { withRouter } from 'react-router-dom'
 import { get, post } from '../rest/rest.js'
 import Question from './Question.js'
 import PostQuestion from './PostQuestion.js'
-
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
+import AOS from 'aos'
 export class BrowseForum extends Component {
 
   constructor(props)
@@ -20,7 +21,7 @@ export class BrowseForum extends Component {
       }
 
   }
-  componentDidMount = () => {
+  componentWillMount = () => {
     console.log("I was here");
     // Make rest call to server to fetch a list of questions and respective answers
     var question = get("question", this.state.current_page, this.state.limit_per_page).then((data) => {
@@ -49,11 +50,19 @@ export class BrowseForum extends Component {
     }
     post("question", JSONquestion).then( () =>{
       console.log("called after post");
-      this.componentDidMount()
+      this.setState({
+        questions: []})
+      this.componentWillMount()
     } )
-    
+    /*
+    var tempArr = this.state.questions;
+    tempArr.push(JSONquestion)
+    this.setState({
+      questions: tempArr
+  });*/
   }
   render() {
+    //AOS.init()
     var questions = []
     var data = this.state.questions;
     console.log(data);
@@ -65,7 +74,14 @@ export class BrowseForum extends Component {
     return (
       <div className="col-md-8">
         <PostQuestion eventHandler={ (question, image) => this.postQuestion(question, image)} />
-        {questions}
+        <CSSTransitionGroup transitionName="question" transitionAppear={false} transitionEnterTimeout={300} transitionEnter={true} transitionLeave={true} transitionLeaveTimeout={300}>
+          { 
+            this.state.questions.map( function(data){
+              return <Question args={data} key={data.id}/>
+            } )
+          }
+        </CSSTransitionGroup>
+        
       </div>
     )
   }
