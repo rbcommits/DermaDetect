@@ -15,6 +15,7 @@ export class BrowseForum extends Component {
           questions: [],
           current_page: "0",
           limit_per_page: "10",
+          refreshUI: false
 
       }
 
@@ -33,7 +34,25 @@ export class BrowseForum extends Component {
     
 
   }
-  
+
+
+
+  postQuestion = (question, image) => {
+    var d = new Date();
+    var JSONquestion = {
+    "question": question,
+    "posted_by": "Jason",
+    "posted_on": (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes(),
+    "image_url": image,
+    "answer": [
+    ]
+    }
+    post("question", JSONquestion).then( () =>{
+      console.log("called after post");
+      this.componentDidMount()
+    } )
+    
+  }
   render() {
     var questions = []
     var data = this.state.questions;
@@ -45,7 +64,7 @@ export class BrowseForum extends Component {
     
     return (
       <div className="col-md-8">
-        <PostQuestion />
+        <PostQuestion eventHandler={ (question, image) => this.postQuestion(question, image)} />
         {questions}
       </div>
     )

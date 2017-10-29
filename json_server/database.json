@@ -1,63 +1,87 @@
 {
-    "user": [
-        {}
-    ],
-    "question": [
+  "user": [
+    {}
+  ],
+  "dummy": [
+    {
+      "id": 1,
+      "name": "someoneee"
+    },
+    {
+      "id": 12222113,
+      "name": "someone"
+    },
+    {
+      "id": 145,
+      "name": "someone",
+      "stuff": "blah"
+    }
+  ],
+  "question": [
+    {
+      "id": 1,
+      "question": "Is the rash on my skin dangerous?",
+      "posted_by": "Mipple",
+      "posted_on": "10/22/2017 14:00",
+      "image_url": "images/mipple_10222017",
+      "answer": [
         {
-            "question": "Is the rash on my skin dangerous?",
-            "posted_by": "Mipple",
-            "posted_on": "10/22/2017 14:00",
-            "image_url": "images/mipple_10222017",
-            "answer": [
-                
-                { 
-                    "response": "Hello Miple, This rash is very common during this time of the year. Just apply some Aloe Vera cream on it and you should be fine. Avoid sun exposure and humidity!",
-                    "responded_by": "Dr. Dominus",
-                    "responded_on": "10/22/2017 23:00"
-                },
-                { 
-                    "response": "I'm not too sure. Why don't you stop by my clinic sometime?",
-                    "responded_by": "Dr. Dominus",
-                    "responded_on": "10/22/2017 23:05"
-                },
-                { 
-                    "response": "Hello Miple, This rash is very common during this time of the year. Just apply some Aloe Vera cream on it and you should be fine. Avoid sun exposure and humidity!",
-                    "responded_by": "Dr. Dominus",
-                    "responded_on": "10/22/2017 23:09"
-                },
-                { 
-                    "response": "I'm not too sure. Why don't you stop by my clinic sometime?",
-                    "responded_by": "Daniel",
-                    "responded_on": "10/22/2017 21:31"
-                }
-            ]
-        },
-
-        {
-            "question": "I have these odd red spots on my palms. What are they??",
-            "posted_by": "Raghav",
-            "posted_on": "10/22/2017 14:00",
-            "image_url": "images/raghav_10222017",
-            "answer": [
-                { 
-                    "response": "That is nothing to worry about. It usually happens when people get the flu. It should go away after your flu gets cured",
-                    "responded_by": "Dr Dominus",
-                    "responded_on": "10/22/2017 21:31"
-                }
-            ]
+          "response": "Hello Miple, This rash is very common during this time of the year. Just apply some Aloe Vera cream on it and you should be fine. Avoid sun exposure and humidity!",
+          "responded_by": "Dr. Dominus",
+          "responded_on": "10/22/2017 23:00"
         },
         {
-            "question": "My back won't stop itching, idk what to do",
-            "posted_by": "Sad college student",
-            "posted_on": "10/22/2017 14:00",
-            "image_url": "images/scs_10222017",
-            "answer": [
-                { 
-                    "response": "I can take a look at it in my clinic! Please book and appointment and see me at the earliest!",
-                    "responded_by": "Dr. Dominus",
-                    "responded_on": "10/22/2017 21:31"
-                }
-            ]
+          "response": "I'm not too sure. Why don't you stop by my clinic sometime?",
+          "responded_by": "Dr. Dominus",
+          "responded_on": "10/22/2017 23:05"
+        },
+        {
+          "response": "Hello Miple, This rash is very common during this time of the year. Just apply some Aloe Vera cream on it and you should be fine. Avoid sun exposure and humidity!",
+          "responded_by": "Dr. Dominus",
+          "responded_on": "10/22/2017 23:09"
+        },
+        {
+          "response": "I'm not too sure. Why don't you stop by my clinic sometime?",
+          "responded_by": "Daniel",
+          "responded_on": "10/22/2017 21:31"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "question": "I have these odd red spots on my palms. What are they??",
+      "posted_by": "Raghav",
+      "posted_on": "10/22/2017 14:00",
+      "image_url": "images/raghav_10222017",
+      "answer": [
+        {
+          "response": "That is nothing to worry about. It usually happens when people get the flu. It should go away after your flu gets cured",
+          "responded_by": "Dr Dominus",
+          "responded_on": "10/22/2017 21:31"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "My back won't stop itching, idk what to do",
+      "posted_by": "Sad college student",
+      "posted_on": "10/22/2017 14:00",
+      "image_url": "images/scs_10222017",
+      "answer": [
+        {
+          "response": "I can take a look at it in my clinic! Please book and appointment and see me at the earliest!",
+          "responded_by": "Dr. Dominus",
+          "responded_on": "10/22/2017 21:31"
+        }
+      ]
+    },
+    {
+      "question": "posting a question",
+      "posted_by": "Jason",
+      "posted_on": "10/29/2017 3:47",
+      "image_url": null,
+      "answer": [],
+      "id": 4
+    }
+  ]
 }

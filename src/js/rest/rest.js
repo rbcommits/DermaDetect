@@ -4,12 +4,14 @@ const server_address = "http://localhost:3000/"
 
 export function get(args, page, limit)
 {
-    return axios.get( server_address + args + "?_page="+page + "&_limit="+limit).then( (data) => {
+    return axios.get( server_address + args + "?_page="+page + "&_limit="+limit+"&_sort=id&_order=desc").then( (data) => {
         return data.data;
     } )
 }
 
-export function post(args)
+export function post(target, args)
 {
-    axios.post( server_address + args )
+    return axios.post( server_address + target, args ).then( (response) => {
+        return true;
+    } )
 }

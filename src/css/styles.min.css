@@ -31,11 +31,9 @@
 }
 
 .center-header {
-    width: 50%;
-    margin: auto;
+    
     text-align: center
 }
-
 @media (max-width:768px) {
     .navbar-fixed-side {
         margin-left: -15px;
@@ -618,6 +616,7 @@
     padding: 15px
 }
 
+
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px
@@ -686,21 +685,7 @@
     }
 }
 
-.side-bar {
-    background-color:	#393939 ;
-    height: 100%;
-}
-.side-bar::after {
-    content: "";
-    background: url("sidebar.jpg");
-    opacity: .15;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
-  }
+
 
 .nav {
     padding-left: 0
@@ -755,7 +740,7 @@ body {
         margin-top: 2%;
         height: 90vh;
         position: fixed;
-        max-width: 20%;
+        min-width: 20%;
         margin-left: 2%
     }
     .side-bar {
@@ -809,3 +794,105 @@ body {
     transition: opacity 300ms linear;
     background-color: rgba(255, 255, 255, 0)
   }
+
+  .input-lg {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 1pt;
+    border-bottom-color: #333;
+    border-radius: 0;
+    width: 70% !important;
+}
+
+@media (max-width:767px) {
+    .input-lg {
+        width: 100%
+    }
+}
+
+.post-question {
+    background-color:rgba(219,209,235,0.62);
+}
+
+input[type="file"] {
+    display: none;
+    
+}
+.custom-file-upload {
+    margin: 6px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+font-weight: bold;
+color: #000;
+text-decoration: none;
+}
+
+.custom-file-upload:hover{
+background-color: #efefef;
+border: 1px solid #ccc;
+text-decoration: none;
+}
+
+.sidebar-bg {
+    background-color: rgba(0, 0, 0, .1);
+    color: #05911F;
+    text-decoration: none;
+}
+.sidebar-bg .nav li a{
+    color: #05911F;
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+    padding: 20px;
+}
+
+.side-bar {
+    background-color:	#3e3e3e ;
+    height: 100%;
+}
+.side-bar::after {
+    content: "";
+    background: url("sidebar.jpg");
+    opacity: .15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 999999;   
+  }
+.forum-user-image {
+width: 150px;
+height: 150px;
+    
+}
+.navbar  {
+    border-bottom: 2px solid #888;
+}
+
+.question .col-md-8{
+    margin: 0px !important;
+}
+
+
+.question .post-image {
+    width: 100%;
+}
+.question .reply {
+    background: #efefef;
+}
+
+
+
+.question .question-date {
+    color: #9f9f9f;
+}
+.question .table {
+    margin-bottom: 0;
+}
+
+.table-responsive > .table >tbody > tr >td {
+    white-space: normal;
+}

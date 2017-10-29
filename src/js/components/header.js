@@ -9,7 +9,7 @@ export class Header extends Component {
   render() {
     return (
         <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 nav-border">
                 <nav className="navbar navbar-default navigation-clean-search">
                     <div className="container">
                         <div className="navbar-header">

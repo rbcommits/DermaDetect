@@ -6,14 +6,14 @@ export default class Sidebar extends React.Component {
         return (
 
             <div className="col-md-4 side-bar">
-                <div className="card">
+                <div className="card sidebar-bg">
                     <div className="card-header">
                         <div className="center-header">
                             <img
-                                className="img-circle img-responsive center-header"
-                                src="http://petermoffatt.com/sites/default/files/headshots/pete_generic_headshot.jpg"
-                                width="100"
-                                height="100"/>
+                                className="img-circle forum-user-image"
+                                src="http://www.lopeztileinstaller.com/Ceramic%20Tile/dal-tile/rittenhouse%20square/Semi-Gloss/White%202%20k101%20lg.jpg"
+                                width="150"
+                                height="150"/>
                             <h3>Welcome Dominus!</h3>
                         </div>
                     </div>
