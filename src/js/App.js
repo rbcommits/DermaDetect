@@ -12,7 +12,13 @@ import styles from '../css/styles.min.css'
 
 ReactDOM.render((
   <Provider store={store}>
-    <BrowserRouter>
+    <Index />
+  </Provider>
+), document.getElementById('app'));
+
+/*
+<Route render={(props) => (<div>404 not found</div>)}/>
+<BrowserRouter>
       <Router history={createBrowserHistory()}>
         <Switch>
           <Route exact path='/' component={Index}/>
@@ -20,11 +26,5 @@ ReactDOM.render((
         </Switch>
       </Router>
     </BrowserRouter>
-  </Provider>
-), document.getElementById('app'));
-
-/*
-<Route render={(props) => (<div>404 not found</div>)}/>
-
 
   */
