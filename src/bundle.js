@@ -8603,7 +8603,7 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var server_address = "https://dermadetect.appspot.com/";
+var server_address = "https://dermadetect.appspot.com/api/";
 
 function get(args, page, limit) {
     return _axios2.default.get(server_address + args + "?_page=" + page + "&_limit=" + limit + "&_sort=id&_order=desc").then(function (data) {

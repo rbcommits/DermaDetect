@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const server_address = "https://dermadetect.appspot.com/"
+const server_address = "https://dermadetect.appspot.com/api/"
 
 export function get(args, page, limit)
 {
