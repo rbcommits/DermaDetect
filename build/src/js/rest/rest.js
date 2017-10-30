@@ -1,4 +1,4 @@
-//import axios from 'axios';
+import axios from 'axios';
 
 const server_address = "https://dermadetect.appspot.com/api/"  //"http://localhost:3000/" // "http://dermadetect.azurewebsites.net/api/"
 
