@@ -15,6 +15,7 @@ server.get('/home', function (req, res, next) {
       root: './public/'
     });
   });
-server.listen(3000, () => {
+var PORT = process.env.PORT || 8080;
+server.listen(PORT, () => {
   console.log('JSON Server is running')
 })
