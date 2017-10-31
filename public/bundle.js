@@ -10951,21 +10951,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var server_address = "https://dermadetect.appspot.com/api/"; //"http://localhost:3000/" // "http://dermadetect.azurewebsites.net/api/"
+var server_address = "http://dermadetect.azurewebsites.net/api/"; //"https://dermadetect.appspot.com/api/"  //"http://localhost:3000/" // 
 
 function get(args, page, limit) {
-
-    return fetch(server_address + args + "?_page=" + page + "&_limit=" + limit + "&_sort=id&_order=desc").then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        console.log(data);return data;
-    });
-
     /*
-    return axios.get( server_address + args + "?_page="+page + "&_limit="+limit+"&_sort=id&_order=desc").then( (data) => {
-        return data.data;
-    } )
+    return fetch(server_address + args + "?_page="+page + "&_limit="+limit+"&_sort=id&_order=desc")
+    .then(response => response.json())
+    .then(data => { console.log(data);  return data } );
     */
+
+    return _axios2.default.get(server_address + args + "?_page=" + page + "&_limit=" + limit + "&_sort=id&_order=desc").then(function (data) {
+        return data.data;
+    });
 }
 
 function post(target, args) {
@@ -18890,8 +18887,14 @@ var Question = function (_Component) {
             });
         };
 
+        _this.addReply = function (reply) {
+            var answer = _this.state.answers;
+            answer.push(reply);
+        };
+
         _this.state = {
-            showResponse: false
+            showResponse: false,
+            answers: _this.props.args.answer
         };
 
         return _this;
@@ -18903,7 +18906,7 @@ var Question = function (_Component) {
 
             if (this.props.args) {
                 var answers = [];
-                var data = this.props.args.answer;
+                var data = this.state.answers;
                 for (var i = 0; i < data.length; i++) {
                     answers.push(_react2.default.createElement(
                         'div',
