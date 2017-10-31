@@ -9,7 +9,8 @@ export default class Question extends Component {
     {
         super(props);
         this.state = {
-            showResponse: false
+            showResponse: false,
+            answers: this.props.args.answer
         }
 
     }
@@ -19,11 +20,17 @@ export default class Question extends Component {
             showResponse: !this.state.showResponse
         })
     }
+    
+    addReply = (reply) => {
+        var answer = this.state.answers;
+        answer.push(reply);
+    }
+
     render() {
 
         if (this.props.args) {
             var answers = []
-            var data = this.props.args.answer;
+            var data = this.state.answers;
             for (var i = 0; i < data.length; i++) {
                 answers.push(
                     <div className="table-responsive reply" key={i}>

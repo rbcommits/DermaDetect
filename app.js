@@ -16,6 +16,6 @@ server.get('/home', function (req, res, next) {
     });
   });
 console.log("Testing port: " + process.env.PORT)
-server.listen(443, () => {
+server.listen(process.env.PORT, () => {
   console.log('JSON Server is running')
 })
