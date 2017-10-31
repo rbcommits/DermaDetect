@@ -16,6 +16,6 @@ server.get('/home', function (req, res, next) {
     });
   });
 console.log("Testing port: " + process.env.PORT)
-server.listen(process.env.PORT, () => {
+server.listen(3300, () => {
   console.log('JSON Server is running')
 })
