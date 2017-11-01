@@ -20301,31 +20301,33 @@ var Question = function (_Component) {
             if (this.props.args) {
                 var answers = [];
                 var data = this.state.answers;
-                answers.push(_react2.default.createElement(
-                    'div',
-                    { className: 'table-responsive reply', key: i },
-                    ' ',
-                    _react2.default.createElement(
-                        'table',
-                        { className: 'table' },
+                if (this.props.usertype == "doctor") {
+                    answers.push(_react2.default.createElement(
+                        'div',
+                        { className: 'table-responsive reply', key: i },
+                        ' ',
                         _react2.default.createElement(
-                            'tbody',
-                            null,
+                            'table',
+                            { className: 'table' },
                             _react2.default.createElement(
-                                'tr',
+                                'tbody',
                                 null,
                                 _react2.default.createElement(
-                                    'td',
+                                    'tr',
                                     null,
-                                    _react2.default.createElement(_Reply2.default, { addReply: function addReply(reply) {
-                                            return _this2.addReply(reply);
-                                        }, key: 'reply' })
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        _react2.default.createElement(_Reply2.default, { addReply: function addReply(reply) {
+                                                return _this2.addReply(reply);
+                                            }, key: 'reply' })
+                                    )
                                 )
                             )
-                        )
-                    ),
-                    ' '
-                ));
+                        ),
+                        ' '
+                    ));
+                }
 
                 for (var i = 0; i < data.length; i++) {
                     answers.push(_react2.default.createElement(

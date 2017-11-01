@@ -39,7 +39,9 @@ class Question extends Component {
         if (this.props.args) {
             var answers = []
             var data = this.state.answers;
-            answers.push(
+            if(this.props.usertype == "doctor")
+            {
+                answers.push(
                 <div className = "table-responsive reply" key = {i}> <table className="table">
                     <tbody>
                         <tr>
@@ -47,7 +49,8 @@ class Question extends Component {
                         </tr>
                     </tbody>
                 </table> </div> )
-
+            }
+            
             for (var i = 0; i < data.length; i++) {
                 answers.push(
                     <div className="table-responsive reply" key={i}>
