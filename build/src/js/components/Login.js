@@ -2,15 +2,22 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import AlertContainer from 'react-alert'
+import { withCookies, Cookies } from 'react-cookie';
+import { instanceOf } from 'prop-types';
 
 export class Login extends Component {
 
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+      };
   constructor(props)
   {
     super(props);
+    const { cookies } = this.props;
     this.state = {
          password: '',
-         username: ''
+         username: cookies.get('username') || '',
+         usertype: cookies.get('usertype') || ''
       }
     this.checkLogin = this.checkLogin.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
@@ -31,7 +38,8 @@ export class Login extends Component {
       type: 'error'
     })
   }
-  checkLogin() {
+  checkLogin(popup) {
+    const { cookies } = this.props;
     if(this.state.username != '' && this.state.password != '')
     {
         //for now just hardcoding the password and username
@@ -39,18 +47,25 @@ export class Login extends Component {
             {
                 if(this.state.username == "jason")
                 {
+                    cookies.set('username', this.state.username, { path: '/' });
+                    cookies.set('usertype', "patient", { path: '/' });
                     this.props.loginHandler(this.state.username, "patient")
                 }
                 else if(this.state.username == "dominus")
                 {
+                    cookies.set('username', this.state.username, { path: '/' });
+                    cookies.set('usertype', "doctor", { path: '/' });
                     this.props.loginHandler(this.state.username, "doctor")
                 }
             }
     }
     else 
         {
-
-            this.showAlert();
+            if(popup)
+            {
+                this.showAlert();
+            }
+            
         }
 
   }
@@ -61,7 +76,12 @@ export class Login extends Component {
       this.setState({username: event.target.value})
   }
 
+  componentDidMount = () => {
+    this.checkLogin( false );
+  }
+  
   render() {
+      
     return (
     < div ><AlertContainer ref={a => this.msg = a} {...this.alertOptions} /> <div className="login-dark login">
         <div className="form">
@@ -80,7 +100,7 @@ export class Login extends Component {
                     className="form-control"/>
             </div>
             <div className="form-group">
-                <button className="btn btn-primary btn-block" onClick={this.checkLogin}>Log In</button>
+                <button className="btn btn-primary btn-block" onClick={ () => this.checkLogin(true) }>Log In</button>
             </div>
             <a href="#" className="forgot">Forgot your email or password?</a>
         </div>
@@ -97,4 +117,4 @@ const mapDispatchToProps = {
   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default withCookies(connect(mapStateToProps, mapDispatchToProps)(Login))

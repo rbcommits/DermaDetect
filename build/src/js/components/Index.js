@@ -23,7 +23,7 @@ class Index extends React.Component{
     {
         var user = {
             name: username,
-            type: usertype
+            usertype: usertype
         }
         this.props.dispatch(loginUser(user))
         this.setState({renderUI: !this.state.renderUI})

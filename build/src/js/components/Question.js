@@ -36,6 +36,7 @@ class Question extends Component {
 
     render() {
 
+        console.log(this.props.usertype)
         if (this.props.args) {
             var answers = []
             var data = this.state.answers;

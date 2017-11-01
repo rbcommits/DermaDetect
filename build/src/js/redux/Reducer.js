@@ -1,5 +1,6 @@
 'use strict';
 import { combineReducers } from "redux"
+
 //import other reducer actions here
 
 //we will have multiple actions in redux and would like to combine them using combineReducers.
@@ -12,7 +13,7 @@ const authentication = (state = [], action) => {
       return {
         ...state,
           username: action.username,
-          usertype: action.type,
+          usertype: action.userType,
           logged_in: true
         
       }

@@ -2,7 +2,7 @@ export const loginUser = (user) => {
   return {
     type: 'LOGIN',
     username: user.name,
-    userType: user.type
+    userType: user.usertype
   }
 }
 
