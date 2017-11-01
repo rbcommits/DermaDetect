@@ -11624,7 +11624,7 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var server_address = "http://dermadetect.azurewebsites.net/api/"; //"https://dermadetect.appspot.com/api/"  //"http://localhost:3000/" // 
+var server_address = "https://dermadetect.azurewebsites.net/api/"; //"https://dermadetect.appspot.com/api/"  //"http://localhost:3000/" // 
 var localhost = "http://localhost:1337/api/";
 function get(args, page, limit) {
     /*
