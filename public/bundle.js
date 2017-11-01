@@ -20186,7 +20186,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = {};
 
-exports.default = (0, _reactCookie.withCookies)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Login));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Login);
 
 /***/ }),
 /* 288 */
