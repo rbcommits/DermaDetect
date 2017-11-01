@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import AlertContainer from 'react-alert'
-import { withCookies, Cookies } from 'react-cookie';
-import { instanceOf } from 'prop-types';
+
 
 export class Login extends Component {
 
@@ -11,7 +10,6 @@ export class Login extends Component {
   constructor(props)
   {
     super(props);
-    const { cookies } = this.props;
     this.state = {
          password: '',
          username: '',
@@ -36,8 +34,7 @@ export class Login extends Component {
       type: 'error'
     })
   }
-  checkLogin(popup) {
-    const { cookies } = this.props;
+  checkLogin() {
     if(this.state.username != '' && this.state.password != '')
     {
         //for now just hardcoding the password and username
@@ -55,15 +52,19 @@ export class Login extends Component {
                     //cookies.set('usertype', "doctor", { path: '/' });
                     this.props.loginHandler(this.state.username, "doctor")
                 }
+                else 
+                    {
+                        this.showAlert();
+                    }
             }
+            else 
+                {
+                    this.showAlert();
+                }
     }
     else 
         {
-            if(popup)
-            {
-                this.showAlert();
-            }
-            
+            this.showAlert();
         }
 
   }
@@ -98,7 +99,7 @@ export class Login extends Component {
                     className="form-control"/>
             </div>
             <div className="form-group">
-                <button className="btn btn-primary btn-block" onClick={ () => this.checkLogin(true) }>Log In</button>
+                <button className="btn btn-primary btn-block" onClick={ this.checkLogin }>Log In</button>
             </div>
             <a href="#" className="forgot">Forgot your email or password?</a>
         </div>
@@ -107,12 +108,16 @@ export class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  
-})
+const mapStateToProps = state => {
+    return {
 
-const mapDispatchToProps = {
-  
+    }
+}
+
+const mapDispatchToProps = dispatcher => {
+    return {
+
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

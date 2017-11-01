@@ -7,15 +7,12 @@ import ReactDOM from "react-dom"
 import store from './redux/Store';
 import Index from './components/Index';
 import styles from '../css/styles.min.css'
-import { CookiesProvider } from 'react-cookie';
 
 
 ReactDOM.render((
-  <CookiesProvider>
     <Provider store={store}>
       <Index />
     </Provider>
-  </CookiesProvider>
 ), document.getElementById('app'));
 
 /*
