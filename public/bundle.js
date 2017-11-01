@@ -20057,15 +20057,15 @@ var Login = exports.Login = function (_Component) {
         };
 
         _this.componentDidMount = function () {
-            _this.checkLogin(false);
+            //this.checkLogin( false );
         };
 
         var cookies = _this.props.cookies;
 
         _this.state = {
             password: '',
-            username: cookies.get('username') || '',
-            usertype: cookies.get('usertype') || ''
+            username: '',
+            usertype: ''
         };
         _this.checkLogin = _this.checkLogin.bind(_this);
         _this.handlePassword = _this.handlePassword.bind(_this);
@@ -20082,12 +20082,12 @@ var Login = exports.Login = function (_Component) {
                 //for now just hardcoding the password and username
                 if (this.state.password == "123") {
                     if (this.state.username == "jason") {
-                        cookies.set('username', this.state.username, { path: '/' });
-                        cookies.set('usertype', "patient", { path: '/' });
+                        //cookies.set('username', this.state.username, { path: '/' });
+                        //cookies.set('usertype', "patient", { path: '/' });
                         this.props.loginHandler(this.state.username, "patient");
                     } else if (this.state.username == "dominus") {
-                        cookies.set('username', this.state.username, { path: '/' });
-                        cookies.set('usertype', "doctor", { path: '/' });
+                        //cookies.set('username', this.state.username, { path: '/' });
+                        //cookies.set('usertype', "doctor", { path: '/' });
                         this.props.loginHandler(this.state.username, "doctor");
                     }
                 }
@@ -20174,11 +20174,6 @@ var Login = exports.Login = function (_Component) {
 
     return Login;
 }(_react.Component);
-
-Login.propTypes = {
-    cookies: (0, _propTypes.instanceOf)(_reactCookie.Cookies).isRequired
-};
-
 
 var mapStateToProps = function mapStateToProps(state) {
     return {};

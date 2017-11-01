@@ -7,17 +7,15 @@ import { instanceOf } from 'prop-types';
 
 export class Login extends Component {
 
-    static propTypes = {
-        cookies: instanceOf(Cookies).isRequired
-      };
+
   constructor(props)
   {
     super(props);
     const { cookies } = this.props;
     this.state = {
          password: '',
-         username: cookies.get('username') || '',
-         usertype: cookies.get('usertype') || ''
+         username: '',
+         usertype: ''
       }
     this.checkLogin = this.checkLogin.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
@@ -47,14 +45,14 @@ export class Login extends Component {
             {
                 if(this.state.username == "jason")
                 {
-                    cookies.set('username', this.state.username, { path: '/' });
-                    cookies.set('usertype', "patient", { path: '/' });
+                    //cookies.set('username', this.state.username, { path: '/' });
+                    //cookies.set('usertype', "patient", { path: '/' });
                     this.props.loginHandler(this.state.username, "patient")
                 }
                 else if(this.state.username == "dominus")
                 {
-                    cookies.set('username', this.state.username, { path: '/' });
-                    cookies.set('usertype', "doctor", { path: '/' });
+                    //cookies.set('username', this.state.username, { path: '/' });
+                    //cookies.set('usertype', "doctor", { path: '/' });
                     this.props.loginHandler(this.state.username, "doctor")
                 }
             }
@@ -77,7 +75,7 @@ export class Login extends Component {
   }
 
   componentDidMount = () => {
-    this.checkLogin( false );
+    //this.checkLogin( false );
   }
   
   render() {
