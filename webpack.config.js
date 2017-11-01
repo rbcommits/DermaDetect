@@ -2,8 +2,8 @@ var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var BUILD_DIR = path.resolve(__dirname, '../public/');
-var APP_DIR = path.resolve(__dirname, 'src/js');
+var BUILD_DIR = path.resolve(__dirname, 'public/');
+var APP_DIR = path.resolve(__dirname, 'build/src/js');
 
 var config = {
   entry: ['babel-polyfill', APP_DIR + '/App.js'],
@@ -14,6 +14,7 @@ var config = {
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },
+
   module: {
     loaders: [
       {
@@ -25,6 +26,7 @@ var config = {
           plugins: ['transform-class-properties', 'transform-decorators-legacy']
         }
       },
+      { test: /\.json$/, loader: 'json-loader' },
       {
         test: /\.css$/,
         loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]

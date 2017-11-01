@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
-
-export default class Question extends Component {
+import Reply from './Reply.js'
+class Question extends Component {
     constructor(props)
     {
         super(props);
@@ -22,8 +22,16 @@ export default class Question extends Component {
     }
     
     addReply = (reply) => {
-        var answer = this.state.answers;
-        answer.push(reply);
+        console.log("CAME HERE")
+        var d = new Date();
+        var answer = {
+            "response": reply,
+            "responded_by": "Dr. " + this.props.username,
+            "responded_on": (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()
+          }
+        var new_answers = this.state.answers;
+        new_answers.push(answer);
+        this.setState({answers: new_answers})
     }
 
     render() {
@@ -31,6 +39,15 @@ export default class Question extends Component {
         if (this.props.args) {
             var answers = []
             var data = this.state.answers;
+            answers.push(
+                <div className = "table-responsive reply" key = {i}> <table className="table">
+                    <tbody>
+                        <tr>
+                            <td><Reply addReply= { (reply) => this.addReply(reply) } key={'reply'}/></td>
+                        </tr>
+                    </tbody>
+                </table> </div> )
+
             for (var i = 0; i < data.length; i++) {
                 answers.push(
                     <div className="table-responsive reply" key={i}>
@@ -40,7 +57,7 @@ export default class Question extends Component {
                                     <td><img
                                         className="img-circle forum-avatar"
                                         src="http://petermoffatt.com/sites/default/files/headshots/pete_generic_headshot.jpg"/></td>
-                                    <td><p><b>{data[i].responded_by}: </b> {data[i].response}</p><p>{data[i].responded_on}</p></td>
+                                    <td className="content"><p><b>{data[i].responded_by}: </b> {data[i].response}</p><p>{data[i].responded_on}</p></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -97,5 +114,14 @@ export default class Question extends Component {
     }
 }
 
-// data-aos="fade-up" data-aos-once="true"
-//
+const mapStateToProps = (state) => ({
+    username: state.authentication.username,
+    usertype: state.authentication.usertype
+  })
+  
+  const mapDispatchToProps = {
+    
+  }
+  
+export default connect(mapStateToProps, mapDispatchToProps)(Question)
+  

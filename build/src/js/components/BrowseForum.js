@@ -7,7 +7,7 @@ import Question from './Question.js'
 import PostQuestion from './PostQuestion.js'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import AOS from 'aos'
-export class BrowseForum extends Component {
+class BrowseForum extends Component {
 
   constructor(props)
   {
@@ -39,10 +39,11 @@ export class BrowseForum extends Component {
 
 
   postQuestion = (question, image) => {
+    console.log("POSTING QUESTION AS  " + this.props.username)
     var d = new Date();
     var JSONquestion = {
     "question": question,
-    "posted_by": "Jason",
+    "posted_by": this.props.username,
     "posted_on": (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes(),
     "image_url": image,
     "answer": [
@@ -88,7 +89,8 @@ export class BrowseForum extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  
+  username: state.authentication.username,
+  usertype: state.authentication.usertype
 })
 
 const mapDispatchToProps = {

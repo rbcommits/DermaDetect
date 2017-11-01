@@ -1,15 +1,34 @@
 'use strict';
 import { combineReducers } from "redux"
 //import other reducer actions here
-import test from './actions/test';
+
 //we will have multiple actions in redux and would like to combine them using combineReducers.
-const applicationReducer = combineReducers({
-  test,
-});
+const defaultState = {
+  logged_in: false
+}
+const authentication = (state = [], action) => {
+  switch (action.type) {
+    case 'LOGIN':
+      return {
+        ...state,
+          username: action.username,
+          usertype: action.type,
+          logged_in: true
+        
+      }
+    case 'LOGOUT':
+    return {
+      ...state,
+        logged_in: false
+      
+    }
+    default:
+      return defaultState
+  }
+}
 
-const rootReducer = (state, action) => {
-  return applicationReducer(state, action)
-};
+const rootReducer = combineReducers({
+  authentication,
+})
 
-//we need to export this so we can pass these reducer functions into createStore.
-export default rootReducer;
+export default rootReducer

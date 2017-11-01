@@ -1,6 +1,6 @@
 import React from 'react'
-
-export default class Sidebar extends React.Component {
+import { connect } from 'react-redux';
+class Sidebar extends React.Component {
 
     render() {
         return (
@@ -14,7 +14,7 @@ export default class Sidebar extends React.Component {
                                 src="http://www.lopeztileinstaller.com/Ceramic%20Tile/dal-tile/rittenhouse%20square/Semi-Gloss/White%202%20k101%20lg.jpg"
                                 width="150"
                                 height="150"/>
-                            <h3>Welcome Dominus!</h3>
+                            <h3>Welcome {this.props.username}!</h3>
                         </div>
                     </div>
                     <ul className="nav nav-tabs nav-justified">
@@ -37,14 +37,16 @@ export default class Sidebar extends React.Component {
     }
 }
 
-/*
-const mapStateToProps = (state) => ({
 
-})
+const mapStateToProps = (state) => {
+    return {
+        username: state.authentication.username
+    }
+}
 
 const mapDispatchToProps = {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(sidebar)
-*/
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
+
