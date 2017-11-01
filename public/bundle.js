@@ -11636,11 +11636,9 @@ function get(args, page, limit) {
     return _axios2.default.get(server_address + args + "?_page=" + page + "&_limit=" + limit + "&_sort=id&_order=desc").then(function (data) {
         return data.data;
     }).catch(function (error) {
-        return _axios2.default.get(localhost + args + "?_page=" + page + "&_limit=" + limit + "&_sort=id&_order=desc").then(function (data) {
-            return data.data;
-        }).catch(function (error) {
-            return "";
-        });
+        //return axios.get( localhost + args + "?_page="+page + "&_limit="+limit+"&_sort=id&_order=desc").then( (data) => {
+        //    return data.data;
+        //} ).catch( error => { return "" })
     });
 }
 

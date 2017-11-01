@@ -14,9 +14,9 @@ export function get(args, page, limit)
         return axios.get( server_address + args + "?_page="+page + "&_limit="+limit+"&_sort=id&_order=desc").then( (data) => {
             return data.data;
         } ).catch( error => {
-            return axios.get( localhost + args + "?_page="+page + "&_limit="+limit+"&_sort=id&_order=desc").then( (data) => {
-                return data.data;
-            } ).catch( error => { return "" })
+            //return axios.get( localhost + args + "?_page="+page + "&_limit="+limit+"&_sort=id&_order=desc").then( (data) => {
+            //    return data.data;
+            //} ).catch( error => { return "" })
         } )
     
 
