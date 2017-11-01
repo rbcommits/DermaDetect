@@ -20056,6 +20056,10 @@ var Login = exports.Login = function (_Component) {
             });
         };
 
+        _this.componentDidMount = function () {
+            _this.checkLogin(false);
+        };
+
         var cookies = _this.props.cookies;
 
         _this.state = {
@@ -20108,7 +20112,6 @@ var Login = exports.Login = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            this.checkLogin(false);
             return _react2.default.createElement(
                 'div',
                 null,
