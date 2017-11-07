@@ -39,15 +39,9 @@ export class Login extends Component {
     {
         //for now just hardcoding the password and username
         get("user?username="+this.state.username+"&password="+this.state.password).then((data) => {
-            var server_user = data[0]
-            if(server_user)
+            var user = data[0]
+            if(user)
             {
-                var user = {
-                    id:server_user.id,
-                    name: server_user.name,
-                    username: server_user.username,
-                    usertype: server_user.usertype
-                }
                 this.props.loginHandler(user)
             }
             else

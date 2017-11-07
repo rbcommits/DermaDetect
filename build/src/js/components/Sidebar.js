@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
                         <div className="center-header">
                             <img
                                 className="img-circle forum-user-image"
-                                src="http://www.lopeztileinstaller.com/Ceramic%20Tile/dal-tile/rittenhouse%20square/Semi-Gloss/White%202%20k101%20lg.jpg"
+                                src={this.props.user.image}
                                 width="150"
                                 height="150"/>
                             <h3>Welcome {this.props.user.name}!</h3>
@@ -39,6 +39,7 @@ class Sidebar extends React.Component {
 
 
 const mapStateToProps = (state) => {
+    console.log(state.session.user)
     return {
         user: state.session.user
     }

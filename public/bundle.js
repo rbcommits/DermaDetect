@@ -21002,14 +21002,8 @@ var Login = exports.Login = function (_Component) {
             if (this.state.username != '' && this.state.password != '') {
                 //for now just hardcoding the password and username
                 (0, _rest.get)("user?username=" + this.state.username + "&password=" + this.state.password).then(function (data) {
-                    var server_user = data[0];
-                    if (server_user) {
-                        var user = {
-                            id: server_user.id,
-                            name: server_user.name,
-                            username: server_user.username,
-                            usertype: server_user.usertype
-                        };
+                    var user = data[0];
+                    if (user) {
                         _this2.props.loginHandler(user);
                     } else {
                         _this2.showAlert('Incorrect Username or Password');
@@ -21619,7 +21613,7 @@ var Sidebar = function (_React$Component) {
                             { className: 'center-header' },
                             _react2.default.createElement('img', {
                                 className: 'img-circle forum-user-image',
-                                src: 'http://www.lopeztileinstaller.com/Ceramic%20Tile/dal-tile/rittenhouse%20square/Semi-Gloss/White%202%20k101%20lg.jpg',
+                                src: this.props.user.image,
                                 width: '150',
                                 height: '150' }),
                             _react2.default.createElement(
@@ -21671,6 +21665,7 @@ var Sidebar = function (_React$Component) {
 }(_react2.default.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
+    console.log(state.session.user);
     return {
         user: state.session.user
     };
