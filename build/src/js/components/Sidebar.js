@@ -14,7 +14,7 @@ class Sidebar extends React.Component {
                                 src="http://www.lopeztileinstaller.com/Ceramic%20Tile/dal-tile/rittenhouse%20square/Semi-Gloss/White%202%20k101%20lg.jpg"
                                 width="150"
                                 height="150"/>
-                            <h3>Welcome {this.props.username}!</h3>
+                            <h3>Welcome {this.props.user.name}!</h3>
                         </div>
                     </div>
                     <ul className="nav nav-tabs nav-justified">
@@ -40,7 +40,7 @@ class Sidebar extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        username: state.authentication.username
+        user: state.session.user
     }
 }
 

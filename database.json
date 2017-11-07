@@ -1,6 +1,19 @@
 {
   "user": [
-    {}
+    {
+      "id": 1,
+      "name": "Jason",
+      "username": "jason",
+      "password": "123",
+      "usertype": "patient"
+    },
+    {
+      "id": 2,
+      "name": "Dominus",
+      "username": "dominus",
+      "password": "123",
+      "usertype": "doctor"
+    }
   ],
   "dummy": [
     {
@@ -23,8 +36,13 @@
       "question": "Is the rash on my skin dangerous?",
       "posted_by": "Mipple",
       "posted_on": "10/22/2017 14:00",
-      "image_url": "images/mipple_10222017",
+      "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
       "answer": [
+        {
+          "response": "nope, not at all",
+          "responded_by": "Dr. dominus",
+          "responded_on": "11/3/2017, 2:28:59 AM"
+        },
         {
           "response": "Hello Miple, This rash is very common during this time of the year. Just apply some Aloe Vera cream on it and you should be fine. Avoid sun exposure and humidity!",
           "responded_by": "Dr. Dominus",
@@ -52,7 +70,7 @@
       "question": "I have these odd red spots on my palms. What are they??",
       "posted_by": "Raghav",
       "posted_on": "10/22/2017 14:00",
-      "image_url": "images/raghav_10222017",
+      "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
       "answer": [
         {
           "response": "That is nothing to worry about. It usually happens when people get the flu. It should go away after your flu gets cured",
@@ -66,7 +84,7 @@
       "question": "My back won't stop itching, idk what to do",
       "posted_by": "Jason",
       "posted_on": "10/22/2017 14:00",
-      "image_url": "images/scs_10222017",
+      "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
       "answer": [
         {
           "response": "I can take a look at it in my clinic! Please book and appointment and see me at the earliest!",
@@ -74,6 +92,14 @@
           "responded_on": "10/22/2017 21:31"
         }
       ]
+    },
+    {
+      "question": "tgtrgr",
+      "posted_by": "jason",
+      "posted_on": "11/3/2017 5:49",
+      "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
+      "answer": [],
+      "id": 7
     }
   ]
 }

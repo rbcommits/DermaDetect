@@ -4,7 +4,10 @@ import Header from './Header.js'
 import Sidebar from './Sidebar.js'
 import Login from './Login.js'
 import { loginUser } from '../redux/actions/actions.js'
+import * as sessionActions from '../redux/actions/session';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {get} from '../rest/rest.js'
 
 class Index extends React.Component{
 
@@ -19,19 +22,17 @@ class Index extends React.Component{
 
         
     }
-    updateLogin(username, usertype)
+    updateLogin(user)
     {
-        var user = {
-            name: username,
-            usertype: usertype
-        }
-        this.props.dispatch(loginUser(user))
+        const { login } = this.props.actions
+
+        //this.props.dispatch(loginUser(user))
+        login(user)
         this.setState({renderUI: !this.state.renderUI})
     }
 
     render()
     {
-        console.log("checking login " + this.props.logged_in)
         if(this.props.logged_in)
             {
                 return(
@@ -48,7 +49,7 @@ class Index extends React.Component{
             {
                 return(
                     <div>
-                        <Login loginHandler={ (username, usertype) => this.updateLogin(username, usertype) } />
+                        <Login loginHandler={ (user) => this.updateLogin(user) } />
                     </div>
                 );
             }
@@ -58,16 +59,17 @@ class Index extends React.Component{
 }
 
 const mapStateToProps = state => {
+
     return {
-      username: state.authentication.username || "null",
-      usertype: state.authentication.usertype || "null",
-      logged_in: state.authentication.logged_in
+      user: state.session.user || "null",
+      logged_in: state.session.authenticated
     }
   }
   
-  const mapDispatchToProps = dispatcher => {
+const mapDispatchToProps = dispatcher => {
     return {
-        dispatch: dispatcher
+        dispatch: dispatcher,
+        actions: bindActionCreators(sessionActions, dispatcher)
         }
     }
   

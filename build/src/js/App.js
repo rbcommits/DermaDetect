@@ -7,7 +7,10 @@ import ReactDOM from "react-dom"
 import store from './redux/Store';
 import Index from './components/Index';
 import styles from '../css/styles.min.css'
+import { sessionService } from 'redux-react-session';
 
+
+sessionService.initSessionService(store, { driver: 'COOKIES' });
 
 ReactDOM.render((
     <Provider store={store}>

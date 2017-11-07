@@ -10,9 +10,10 @@ import rootReducer from './Reducer';
 //thunk allows redux to instead return an action, return a function
 //logger allows state to show in console.
 //promise allows for asynchronous dispatching of actions.
-const middleware = applyMiddleware(promise(), thunk, logger);
+const middleware = applyMiddleware(promise(), thunk);
 
 //create redux store.
 const store = createStore(rootReducer, middleware);
+
 
 export default store;

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import AlertContainer from 'react-alert'
-
+import {get} from '../rest/rest.js'
 
 export class Login extends Component {
 
@@ -28,8 +28,8 @@ export class Login extends Component {
     transition: 'scale'
   }
 
-  showAlert = () => {
-    this.msg.show('Incorrect Username or Password', {
+  showAlert = (message) => {
+    this.msg.show(message, {
       time: 2000,
       type: 'error'
     })
@@ -38,34 +38,28 @@ export class Login extends Component {
     if(this.state.username != '' && this.state.password != '')
     {
         //for now just hardcoding the password and username
-        if(this.state.password == "123")
+        get("user?username="+this.state.username+"&password="+this.state.password).then((data) => {
+            var server_user = data[0]
+            if(server_user)
             {
-                if(this.state.username == "jason")
-                {
-                    //cookies.set('username', this.state.username, { path: '/' });
-                    //cookies.set('usertype', "patient", { path: '/' });
-                    this.props.loginHandler(this.state.username, "patient")
+                var user = {
+                    id:server_user.id,
+                    name: server_user.name,
+                    username: server_user.username,
+                    usertype: server_user.usertype
                 }
-                else if(this.state.username == "dominus")
-                {
-                    //cookies.set('username', this.state.username, { path: '/' });
-                    //cookies.set('usertype', "doctor", { path: '/' });
-                    this.props.loginHandler(this.state.username, "doctor")
-                }
-                else 
-                    {
-                        this.showAlert();
-                    }
+                this.props.loginHandler(user)
             }
-            else 
-                {
-                    this.showAlert();
-                }
+            else
+            {
+                this.showAlert('Incorrect Username or Password');
+            }
+        })
     }
     else 
-        {
-            this.showAlert();
-        }
+    {
+        this.showAlert('Username or Password cannot be empty!');
+    }
 
   }
   handlePassword(event){
@@ -83,27 +77,27 @@ export class Login extends Component {
       
     return (
     < div ><AlertContainer ref={a => this.msg = a} {...this.alertOptions} /> <div className="login-dark login">
-        <div className="form">
-            <h2 className="sr-only">Login Form</h2>
-            <div className="illustration">
-                <i className="icon ion-ios-locked-outline"></i>
-            </div>
-            <div className="form-group">
-                <input type="email" name="email" onChange={this.handleUsername} placeholder="Username" className="form-control"/>
-            </div>
-            <div className="form-group">
-                <input
-                    type="password"
-                    onChange= { this.handlePassword }
-                    placeholder="Password"
-                    className="form-control"/>
-            </div>
-            <div className="form-group">
-                <button className="btn btn-primary btn-block" onClick={ this.checkLogin }>Log In</button>
-            </div>
-            <a href="#" className="forgot">Forgot your email or password?</a>
+    <div className="form">
+        <h2 className="sr-only">Login Form</h2>
+        <div className="illustration">
+            <i className="icon ion-ios-locked-outline"></i>
         </div>
-    </div> </div>
+        <div className="form-group">
+            <input type="email" name="email" onChange={this.handleUsername} placeholder="Username" className="form-control"/>
+        </div>
+        <div className="form-group">
+            <input
+                type="password"
+                onChange= { this.handlePassword }
+                placeholder="Password"
+                className="form-control"/>
+        </div>
+        <div className="form-group">
+            <button className="btn btn-primary btn-block" onClick={ this.checkLogin }>Log In</button>
+        </div>
+        <a href="#" className="forgot">Forgot your email or password?</a>
+    </div>
+</div> </div>
     )
   }
 }

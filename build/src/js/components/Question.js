@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import Reply from './Reply.js'
+import {patch} from '../rest/rest.js'
 class Question extends Component {
     constructor(props)
     {
@@ -15,35 +16,35 @@ class Question extends Component {
 
     }
     toggleAnswers = () => {
-        console.log("I was clicked: " + this.state.showResponse);
         this.setState({
             showResponse: !this.state.showResponse
         })
     }
     
     addReply = (reply) => {
-        console.log("CAME HERE")
+
         var d = new Date();
         var answer = {
             "response": reply,
-            "responded_by": "Dr. " + this.props.username,
-            "responded_on": (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()
+            "responded_by": "Dr. " + this.props.user.username,
+            "responded_on": d.toLocaleDateString() + ", " + d.toLocaleTimeString()
           }
         var new_answers = this.state.answers;
-        new_answers.push(answer);
+        new_answers.unshift(answer);
+        patch("question/"+this.props.args.id, { answer: new_answers})
         this.setState({answers: new_answers})
     }
 
     render() {
 
-        console.log(this.props.usertype)
+
         if (this.props.args) {
             var answers = []
             var data = this.state.answers;
-            if(this.props.usertype == "doctor")
+            if(this.props.user.usertype == "doctor")
             {
                 answers.push(
-                <div className = "table-responsive reply" key = {i}> <table className="table">
+                <div className = "table-responsive reply" key = {'reply'}> <table className="table">
                     <tbody>
                         <tr>
                             <td><Reply addReply= { (reply) => this.addReply(reply) } key={'reply'}/></td>
@@ -76,7 +77,7 @@ class Question extends Component {
                                 <img
                                     width="300"
                                     height="300"
-                                    src="http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg"
+                                    src={this.props.args.image_url}
                                     className="center-header img-responsive post-image"/>
                             </div>
 
@@ -119,8 +120,7 @@ class Question extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    username: state.authentication.username,
-    usertype: state.authentication.usertype
+    user: state.session.user || null
   })
   
   const mapDispatchToProps = {
