@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import Reply from './Reply.js'
 import {patch} from '../rest/rest.js'
+import { Link } from 'react-router-dom'
 class Question extends Component {
     constructor(props)
     {
@@ -69,6 +70,7 @@ class Question extends Component {
             }
             
             for (var i = 0; i < data.length; i++) {
+                var link = "/users/"+data[i].responded_by;
                 answers.push(
                     <div className="table-responsive reply" key={i}>
                         <table className="table">
@@ -77,7 +79,7 @@ class Question extends Component {
                                     <td><img
                                         className="img-circle forum-avatar"
                                         src="http://petermoffatt.com/sites/default/files/headshots/pete_generic_headshot.jpg"/></td>
-                                    <td className="content"><p><b>{data[i].responded_by}: </b> {data[i].response}</p><p>{data[i].responded_on}</p></td>
+                                    <td className="content"><p><b><Link to={link}>{data[i].responded_by}: </Link></b> {data[i].response}</p><p>{data[i].responded_on}</p></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -21,7 +21,7 @@ class UserProfile extends Component {
 
     componentDidMount = () => {
         console.log("I came to fetch user data " + this.props.match.params.userID)
-      get("user?username="+this.props.match.params.userID).then((data)=>{
+      get("user?name="+this.props.match.params.userID).then((data)=>{
         console.log("promise resolved")
         console.log(data)
         if(data)
