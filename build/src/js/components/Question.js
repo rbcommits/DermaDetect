@@ -87,7 +87,7 @@ class Question extends Component {
                     </div>
                 );
             }
-
+            var posted_by_link = "/users/" + this.props.args.posted_by;
             return (
                 <div className="card"  ><div className="card-content question"><div className="row">
                             <div className="col-md-4">
@@ -110,9 +110,11 @@ class Question extends Component {
                                                     className="img-circle forum-avatar"/></td>
                                                 <td className="content">
                                                     <p>
-                                                        <strong>
-                                                            {this.props.args.posted_by}
-                                                        </strong>
+                                                        <Link to={posted_by_link}>
+                                                            <strong>
+                                                                {this.props.args.posted_by}
+                                                            </strong>
+                                                        </Link>
                                                     </p>
                                                     <p className="question-date">
                                                         {this.props.args.posted_on}
