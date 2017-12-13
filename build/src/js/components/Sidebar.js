@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 class Sidebar extends React.Component {
 
     render() {
@@ -19,11 +20,14 @@ class Sidebar extends React.Component {
                     </div>
                     <ul className="nav nav-tabs nav-justified">
                         <li>
-                            <a href="#">Messages
-                            </a>
+                        <Link to="/users/dominus">
+                            <a href="#">View Profile</a>
+                        </Link>
                         </li>
                         <li>
+                        <Link to="/">
                             <a href="#">Browse Forum</a>
+                        </Link>
                         </li>
                         <li>
                             <a href="#">Settings

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import AlertContainer from 'react-alert'
 import {get} from '../rest/rest.js'
 
-export class Login extends Component {
+class Login extends Component {
 
 
   constructor(props)
@@ -109,3 +109,9 @@ const mapDispatchToProps = dispatcher => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
+
+
+
+
+

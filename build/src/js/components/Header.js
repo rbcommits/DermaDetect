@@ -17,6 +17,7 @@ export class Header extends Component {
     {
         const { logout } = this.props.actions;
         logout()
+        console.log("Clicked logout");
     }
 
 

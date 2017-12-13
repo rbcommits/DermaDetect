@@ -11,7 +11,11 @@ class Question extends Component {
         super(props);
         this.state = {
             showResponse: false,
-            answers: this.props.args.answer
+            answers: this.props.args.answer,
+            image: this.props.args.image_url,
+            placeholder_image: "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
+            image_url: "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
+            img_click: false
         }
 
     }
@@ -35,6 +39,17 @@ class Question extends Component {
         this.setState({answers: new_answers})
     }
 
+    flipImage = () => {
+        if(this.state.img_click)
+        {
+            this.setState({image_url: this.state.image, img_click: !this.state.img_click})
+        }
+        else
+        {
+            this.setState({image_url: this.state.placeholder_image, img_click: !this.state.img_click})
+        }
+        console.log("I clicked image!");
+    }
     render() {
 
 
@@ -77,8 +92,10 @@ class Question extends Component {
                                 <img
                                     width="300"
                                     height="300"
-                                    src={this.props.args.image_url}
-                                    className="center-header img-responsive post-image"/>
+                                    src={this.state.image_url}
+                                    className="center-header img-responsive post-image"
+                                    onClick={this.flipImage}
+                                    />
                             </div>
 
                             <div className="col-md-8">

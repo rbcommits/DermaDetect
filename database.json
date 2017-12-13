@@ -6,7 +6,9 @@
       "username": "jason",
       "password": "123",
       "usertype": "patient",
-      "image": "https://format-com-cld-res.cloudinary.com/image/private/s--hb18BA4l--/c_fill,g_center,h_300,w_300/a_auto,fl_keep_iptc.progressive,q_95/v1/81e3b65826f743b184a53713244f6d3d/Calum_Callaghan_-_Anna_Nightingale_Headshots_-_3.jpg"
+      "email": "JP543@gmail.com",
+      "image": "https://format-com-cld-res.cloudinary.com/image/private/s--hb18BA4l--/c_fill,g_center,h_300,w_300/a_auto,fl_keep_iptc.progressive,q_95/v1/81e3b65826f743b184a53713244f6d3d/Calum_Callaghan_-_Anna_Nightingale_Headshots_-_3.jpg",
+      "phone": "(123).456.7890"
     },
     {
       "id": 2,
@@ -14,7 +16,29 @@
       "username": "dominus",
       "password": "123",
       "usertype": "doctor",
-      "image": "https://res.cloudinary.com/fivemiles/image/upload/f_auto,t_i300/v1487883142/pfdlvab36sta4nm7otpw.jpg"
+      "email": "dominusclinic@gmail.com",
+      "image": "https://res.cloudinary.com/fivemiles/image/upload/f_auto,t_i300/v1487883142/pfdlvab36sta4nm7otpw.jpg",
+      "phone": "(123).456.7890"
+    },
+    {
+      "id": 3,
+      "name": "Daniel",
+      "username": "daniel",
+      "password": "123",
+      "usertype": "patient",
+      "email": "DM543@gmail.com",
+      "image": "https://format-com-cld-res.cloudinary.com/image/private/s--hb18BA4l--/c_fill,g_center,h_300,w_300/a_auto,fl_keep_iptc.progressive,q_95/v1/81e3b65826f743b184a53713244f6d3d/Calum_Callaghan_-_Anna_Nightingale_Headshots_-_3.jpg",
+      "phone": "(123).456.7890"
+    },
+    {
+      "id": 4,
+      "name": "Brandon",
+      "username": "brandon",
+      "password": "123",
+      "usertype": "patient",
+      "email": "BP543@gmail.com",
+      "image": "https://format-com-cld-res.cloudinary.com/image/private/s--hb18BA4l--/c_fill,g_center,h_300,w_300/a_auto,fl_keep_iptc.progressive,q_95/v1/81e3b65826f743b184a53713244f6d3d/Calum_Callaghan_-_Anna_Nightingale_Headshots_-_3.jpg",
+      "phone": "(123).456.7890"
     }
   ],
   "dummy": [
@@ -36,7 +60,7 @@
     {
       "id": 1,
       "question": "Is the rash on my skin dangerous?",
-      "posted_by": "Mipple",
+      "posted_by": "Brandon",
       "posted_on": "10/22/2017 14:00",
       "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
       "answer": [

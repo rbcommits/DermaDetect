@@ -14,7 +14,7 @@ var config = {
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },
-  
+  devtool: "#eval-source-map",
   module: {
     loaders: [
       {
