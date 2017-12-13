@@ -62,31 +62,37 @@
       "question": "Is the rash on my skin dangerous?",
       "posted_by": "Brandon",
       "posted_on": "10/22/2017 14:00",
+      "username": "dominus",
       "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
       "answer": [
         {
           "response": "nope, not at all",
           "responded_by": "Dr. dominus",
+          "username": "dominus",
           "responded_on": "11/3/2017, 2:28:59 AM"
         },
         {
           "response": "Hello Miple, This rash is very common during this time of the year. Just apply some Aloe Vera cream on it and you should be fine. Avoid sun exposure and humidity!",
           "responded_by": "Dr. Dominus",
+          "username": "dominus",
           "responded_on": "10/22/2017 23:00"
         },
         {
           "response": "I'm not too sure. Why don't you stop by my clinic sometime?",
           "responded_by": "Dr. Dominus",
+          "username": "dominus",
           "responded_on": "10/22/2017 23:05"
         },
         {
           "response": "Hello Miple, This rash is very common during this time of the year. Just apply some Aloe Vera cream on it and you should be fine. Avoid sun exposure and humidity!",
           "responded_by": "Dr. Dominus",
+          "username": "dominus",
           "responded_on": "10/22/2017 23:09"
         },
         {
           "response": "I'm not too sure. Why don't you stop by my clinic sometime?",
           "responded_by": "Daniel",
+          "username": "dominus",
           "responded_on": "10/22/2017 21:31"
         }
       ]
@@ -101,6 +107,7 @@
         {
           "response": "That is nothing to worry about. It usually happens when people get the flu. It should go away after your flu gets cured",
           "responded_by": "Dr Dominus",
+          "username": "dominus",
           "responded_on": "10/22/2017 21:31"
         }
       ]
@@ -110,11 +117,13 @@
       "question": "My back won't stop itching, idk what to do",
       "posted_by": "Jason",
       "posted_on": "10/22/2017 14:00",
+      "username": "jason",
       "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
       "answer": [
         {
           "response": "I can take a look at it in my clinic! Please book and appointment and see me at the earliest!",
           "responded_by": "Dr. Dominus",
+          "username": "dominus",
           "responded_on": "10/22/2017 21:31"
         }
       ]
@@ -122,6 +131,7 @@
     {
       "question": "tgtrgr",
       "posted_by": "jason",
+      "username": "jason",
       "posted_on": "11/3/2017 5:49",
       "image_url": "http://gkoonz.com/wp-content/uploads/2013/02/placeholder.jpg",
       "answer": [],

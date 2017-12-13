@@ -70,7 +70,7 @@ class Question extends Component {
             }
             
             for (var i = 0; i < data.length; i++) {
-                var link = "/users/"+data[i].responded_by;
+                var link = "/users/"+data[i].username;
                 answers.push(
                     <div className="table-responsive reply" key={i}>
                         <table className="table">

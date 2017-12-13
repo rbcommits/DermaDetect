@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 class Sidebar extends React.Component {
 
     render() {
+        var user_link = "/users/" + this.props.user.username;
         return (
 
             <div className="col-md-4 side-bar">
@@ -20,7 +21,7 @@ class Sidebar extends React.Component {
                     </div>
                     <ul className="nav nav-tabs nav-justified">
                         <li>
-                        <Link to="/users/dominus">
+                        <Link to={user_link}>
                             <a href="#">View Profile</a>
                         </Link>
                         </li>

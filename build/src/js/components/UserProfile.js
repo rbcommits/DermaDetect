@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {get} from '../rest/rest.js'
 import { connect } from 'react-redux'
+import CalendarDemo from './CalendarDemo.jsx';
 import {
     BrowserRouter as Router,
     Route,
@@ -20,21 +21,28 @@ class UserProfile extends Component {
     }
 
     componentDidMount = () => {
-        console.log("I came to fetch user data " + this.props.match.params.userID)
-      get("user?name="+this.props.match.params.userID).then((data)=>{
-        console.log("promise resolved")
-        console.log(data)
+        console.log(this.props.match.params.userID)
+      get("user?username="+this.props.match.params.userID).then((data)=>{
+
         if(data)
         {
             this.setState({user: data[0]})
         }
+
       })
+
     }
     
 
     
 
   render() {
+      var calendar = []
+      if(this.props.user.usertype == "doctor")
+      {
+          calendar.push(<CalendarDemo />)
+      }
+      
     //console.log("TESTING: " + this.props.match.params.userID)
     return (
         <div>
@@ -79,6 +87,7 @@ class UserProfile extends Component {
                             </div>
                         </div>
                     </form>
+                    {calendar}
                 </div>
             </div>
       </div>
